@@ -49,20 +49,46 @@ namespace aprg_v4.front
                 #endregion
 
                 #region version while
+                //int i = desde;
+                //bool condicion;
+
+                //if (desde > hasta)
+                //{
+                //    incremento = incremento * -1;
+                //    condicion = i >= hasta;
+                //}
+                //else 
+                //{
+                //    condicion = i <= hasta;
+                //}
+                
+                //while (condicion)
+                //{
+                //    lblSalida.Text = i.ToString("000");
+                //    Task.Delay(5).Wait();
+                //    this.Refresh();
+                //    i = i + incremento;
+                //    if (desde > hasta)
+                //    {
+                //        condicion = i >= hasta;
+                //    }
+                //    else
+                //    {
+                //        condicion = i <= hasta;
+                //    }
+                //}
+                #endregion
+
+                #region version do...while
                 int i = desde;
                 bool condicion;
 
                 if (desde > hasta)
                 {
                     incremento = incremento * -1;
-                    condicion = i >= hasta;
                 }
-                else 
-                {
-                    condicion = i <= hasta;
-                }
-                
-                while (condicion)
+
+                do
                 {
                     lblSalida.Text = i.ToString("000");
                     Task.Delay(5).Wait();
@@ -76,17 +102,14 @@ namespace aprg_v4.front
                     {
                         condicion = i <= hasta;
                     }
-                }
-                #endregion
+                } while (condicion);
 
+                #endregion
             }
             catch (Exception err)
             {
                 lblMsg.Text = "Error: " + err.Message;
             }
-
-
-
         }
     }
 }
